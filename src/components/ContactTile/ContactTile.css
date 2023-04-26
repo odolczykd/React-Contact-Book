@@ -1,0 +1,30 @@
+.contactTile {
+  width: calc(100% - 1rem);
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.tileInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactName {
+  width: 100%;
+  margin: 0;
+}
+
+.avatarImage {
+  height: 4rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 2rem;
+}
