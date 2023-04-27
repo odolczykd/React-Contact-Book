@@ -15,23 +15,31 @@ function ContactDetails({ person }) {
           </HelmetProvider>
 
           <main className="personDetails">
-            <img alt="avatar" src={person.avatar} />
+            <img
+              className="avatarImageLarge"
+              alt="avatar"
+              src={person.avatar}
+            />
 
-            <span>
+            <h2 className="personDetailsUserName">
               {person.firstName} {person.lastName}
-            </span>
+            </h2>
 
-            <span>
+            <div className="personDetailsAddress">
               <span>{person.location.line1}</span>
-              <br />
               <span>{person.location.line2}</span>
-            </span>
+            </div>
 
-            <span>
-              {person.contact.email} <br />
-              {person.contact.phone} <br />
-              {person.contact.facebook}
-            </span>
+            <div className="personDetailsContact">
+              <h3>
+                Get In Contact with
+                <br />
+                {person.firstName} {person.lastName}
+              </h3>
+              <span>{person.contact.email}</span>
+              <span>{person.contact.phone}</span>
+              <span>{person.contact.facebook}</span>
+            </div>
           </main>
         </>
       )}

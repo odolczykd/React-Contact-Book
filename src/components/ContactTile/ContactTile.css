@@ -2,6 +2,7 @@
   width: calc(100% - 1rem);
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
   background: rgba(255, 255, 255, 0.2);
@@ -16,6 +17,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.tileUserName {
+  margin: 0;
 }
 
 .contactName {
@@ -23,8 +29,8 @@
   margin: 0;
 }
 
-.avatarImage {
-  height: 4rem;
+.avatarImageSmall {
+  height: 3.5rem;
   aspect-ratio: 1 / 1;
   border-radius: 2rem;
 }
