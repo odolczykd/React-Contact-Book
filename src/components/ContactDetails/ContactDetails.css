@@ -1,21 +1,6 @@
-.contactDetails {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 8rem 12rem;
-  padding: 1.5rem;
-  color: #fff;
-
-  /* Glass Pane Effect */
-  background: rgba(255, 255, 255, 0.21);
-  border-radius: 5px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-}
+/*.contactDetails {*/
+/*  font-size: 18px;*/
+/*}*/
 
 .personDetails {
   width: 100%;
@@ -29,16 +14,75 @@
   width: 8rem;
   aspect-ratio: 1 / 1;
   border-radius: 4rem;
+  border: 3px solid #02a1dd;
 }
 
 .personDetailsUserName {
   margin: 0;
+  font-size: 30px;
+  text-shadow: 3px 3px 0 #0286b6;
+  transition: 300ms;
 }
 
-.personDetailsAddress,
+.personDetailsUserName:hover {
+  transform: translate(-1px, -1px);
+  text-shadow: 6px 6px 0 #0286b6;
+}
+
+.personDetailsAddress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.personDetailsAddress .description {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.personDetailsIcon {
+  height: 1.5rem;
+  padding: 0.25rem;
+  aspect-ratio: 1 / 1;
+  border: 3px solid white;
+  border-radius: 1.25rem;
+  /*color: #01b5ea;*/
+}
+
 .personDetailsContact {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.getInContactHeader {
+  margin: 0.5rem 0;
+  text-shadow: 2px 2px 0 #0286b6;
+}
+
+.personContactTiles {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.personContactTile {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.personContactIcon {
+  height: 1rem;
+  padding: 0.25rem;
+  aspect-ratio: 1 / 1;
+  border: 3px solid white;
+  border-radius: 1.25rem;
+  /*color: #01b5ea;*/
 }

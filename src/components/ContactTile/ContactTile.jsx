@@ -1,8 +1,8 @@
 import "./ContactTile.css";
 import { useState } from "react";
-import { calculateTimeWithOffset } from "../../common/calculateTimeWithOffset";
+import { calculateTimeWithOffset } from "../../utils/calculateTimeWithOffset";
 
-function ContactTile({ user }) {
+function ContactTile({ user, isSelected }) {
   const [localTime, setLocalTime] = useState(
     calculateTimeWithOffset(user.offset)
   );
@@ -12,7 +12,7 @@ function ContactTile({ user }) {
   }, 1000);
 
   return (
-    <div className="contactTile">
+    <div className={isSelected ? "contactTile selected" : "contactTile"}>
       <img className="avatarImageSmall" alt="avatar" src={user.avatar} />
       <div className="tileInfo">
         <h3 className="tileUserName">

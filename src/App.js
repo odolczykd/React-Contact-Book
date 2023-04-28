@@ -1,13 +1,15 @@
 import "./App.css";
-import { ContactList } from "./components/ContactList/ContactList";
-import { ContactDetails } from "./components/ContactDetails/ContactDetails";
+import { LeftContainer } from "./components/LeftContainer/LeftContainer";
 import { useEffect, useState } from "react";
+import { RightContainer } from "./components/RightContainer/RightContainer";
 
-const USER_API_URL = "https://randomuser.me/api/?results=5&nat=us";
+const USER_API_URL = "https://randomuser.me/api/?results=10&nat=us";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedMode, setSelectedMode] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedBackground, setSelectedBackground] = useState("img/bay.jpg");
 
   /** Get Random User Data **/
   useEffect(() => {
@@ -21,8 +23,8 @@ function App() {
               firstName: user.name.first,
               lastName: user.name.last,
               location: {
-                line1: `${user.location.street.number} ${user.location.street.name}`,
-                line2: `${user.location.city}, ${user.location.state}, ${user.location.country}`,
+                line1: `${user.location.street.number} ${user.location.street.name}, ${user.location.city}`,
+                line2: `${user.location.state}, ${user.location.country}`,
                 coordinates: {
                   latitude: user.location.coordinates.latitude,
                   longitude: user.location.coordinates.longitude,
@@ -42,18 +44,41 @@ function App() {
       .catch((err) => console.warn(err));
   }, []);
 
-  const getSelectedUser = (uuid) => {
-    setSelectedUser(uuid);
+  const getSelectedMode = (mode) => {
+    setSelectedMode(mode);
+  };
+
+  const getSelectedColor = (color) => {
+    setSelectedColor(color);
+  };
+
+  const getSelectedBackground = (backgroundUrl) => {
+    setSelectedBackground(backgroundUrl);
   };
 
   return (
     <div
       className="container"
-      style={{ backgroundImage: "url(/img/background-3.png)" }}
+      style={{
+        backgroundImage: `url(${selectedBackground})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <ContactList users={users} selectUser={getSelectedUser} />
-      <ContactDetails
-        person={users.find((value) => value.uuid === selectedUser)}
+      <LeftContainer
+        users={users}
+        selectedMode={getSelectedMode}
+        color={selectedColor}
+      />
+      <RightContainer
+        mode={selectedMode}
+        person={
+          selectedMode !== "customize" &&
+          selectedMode !== "author" &&
+          users.find((value) => value.uuid === selectedMode)
+        }
+        selectedColor={getSelectedColor}
+        selectedBackground={getSelectedBackground}
       />
     </div>
   );

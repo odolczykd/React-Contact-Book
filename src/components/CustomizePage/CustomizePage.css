@@ -1,0 +1,12 @@
+.backgroundLayout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.backgroundPhotoPreview {
+  width: calc(32% - 1rem);
+  aspect-ratio: 16 / 9;
+  padding: 0.5rem;
+}

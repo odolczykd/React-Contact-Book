@@ -1,16 +1,36 @@
 .contactTile {
-  width: calc(100% - 1rem);
+  width: calc(100% - 1rem - 14px);
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
+  cursor: pointer;
+  transition: 300ms;
+
+  /* Glass Pane Effect */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.contactTile:hover {
+  /* Glass Pane Effect */
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.contactTile.selected {
+  border: 2px solid #02a1dd;
+  background: rgba(1, 181, 234, 0.3);
+  color: white;
+}
+
+.selected .avatarImageSmall {
+  border: 2px solid #02a1dd;
 }
 
 .tileInfo {
@@ -33,4 +53,5 @@
   height: 3.5rem;
   aspect-ratio: 1 / 1;
   border-radius: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
