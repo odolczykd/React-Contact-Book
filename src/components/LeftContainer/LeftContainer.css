@@ -8,11 +8,11 @@
   color: white;
 
   /* Glass Pane Effect */
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-right: 3px solid rgba(255, 255, 255, 0.4);
+  border-right: 3px solid rgba(0, 0, 0, 0.3);
 }
 
 .contactTilesContainer {
@@ -23,7 +23,7 @@
   gap: 0.5rem;
   overflow-y: scroll;
   overflow-x: hidden;
-  color: black;
+  color: #eaeaea;
 }
 
 .contactTilesContainer::-webkit-scrollbar {
@@ -32,7 +32,7 @@
 }
 
 .contactTilesContainer::-webkit-scrollbar-track {
-  background-color: darkgrey;
+  background-color: #757575;
   border-radius: 4px;
 }
 
@@ -45,53 +45,32 @@
   background-color: #02a1dd;
 }
 
-.logoText {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  transition: 300ms;
-}
-
-.logoText:hover {
-  transform: translate(-1px, -1px);
-}
-
-.logoText .white {
-  text-shadow: 2px 2px 0 #0286b6;
-  transition: 300ms;
-}
-
-.logoText:hover .white {
-  text-shadow: 5px 5px 0 #0286b6;
-}
-
-.logoText .blue {
-  color: #01b5ea;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
-  transition: 300ms;
-}
-
-.logoText:hover .blue {
-  text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.4);
-}
-
 .searchInput {
   font-size: 16px;
   margin: 0.5rem 0;
   padding: 0.5rem;
   outline: none;
+  color: #ffffff;
 
   /* Glass Pane Effect */
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 3px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 5px;
+  transition: 300ms;
+}
+
+.searchInput:hover,
+.searchInput:focus {
+  /* Glass Pane Effect */
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.6);
 }
 
 .searchInput::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .yourContactsHeader {

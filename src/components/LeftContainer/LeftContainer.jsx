@@ -8,6 +8,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { useMemo, useState } from "react";
+import { LogoHeader } from "../LogoHeader/LogoHeader";
 
 function LeftContainer({ users, selectedMode, color }) {
   const [selectedUser, setSelectedUser] = useState("");
@@ -22,12 +23,7 @@ function LeftContainer({ users, selectedMode, color }) {
 
   return (
     <section className="leftContainer">
-      <header className="logoText">
-        <span className="white">
-          Contact
-          <span className="blue">Book</span>
-        </span>
-      </header>
+      <LogoHeader />
 
       <input
         className="searchInput"

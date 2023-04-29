@@ -21,6 +21,8 @@ function ContactDetails({ person }) {
             </Helmet>
           </HelmetProvider>
 
+          {/* Add Edit Button */}
+
           <main className="personDetails">
             <img
               className="avatarImageLarge"

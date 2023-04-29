@@ -7,9 +7,14 @@ function calculateTimeWithOffset(offset) {
   if (offsetArray[0].charAt(0) === "-") offsetMilli = -offsetMilli;
   const d = new Date(new Date().getTime() + offsetMilli);
 
-  const hrs = d.getHours() === 0 ? "12" : (d.getHours() % 12).toString();
+  const hrs =
+    d.getHours() === 0 || d.getHours() === 12
+      ? "12"
+      : (d.getHours() % 12).toString();
+
   const mins =
     d.getMinutes() < 10 ? `0${d.getMinutes()}` : d.getMinutes().toString();
+
   const ampm = d.getHours() >= 12 && d.getHours() <= 23 ? "p.m." : "a.m.";
 
   return `${hrs}:${mins} ${ampm}`;

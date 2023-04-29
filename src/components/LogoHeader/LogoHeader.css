@@ -1,0 +1,21 @@
+.logoText {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 0 #0286b6;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.logoText:hover {
+  transform: translate(-1px, -1px);
+  text-shadow: 4px 4px 0 #0286b6;
+}
+
+.logoText .white {
+  color: #ffffff;
+}
+
+.logoText .blue {
+  color: #01b5ea;
+}

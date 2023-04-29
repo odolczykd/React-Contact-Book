@@ -1,6 +1,8 @@
 import "./ContactTile.css";
 import { useState } from "react";
 import { calculateTimeWithOffset } from "../../utils/calculateTimeWithOffset";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 function ContactTile({ user, isSelected }) {
   const [localTime, setLocalTime] = useState(
@@ -18,7 +20,10 @@ function ContactTile({ user, isSelected }) {
         <h3 className="tileUserName">
           {user.firstName} {user.lastName}
         </h3>
-        <span className="tileUserTime">Local Time: {localTime}</span>
+        <span className="tileUserTime">
+          <FontAwesomeIcon icon={faClock} />
+          <span>{localTime}</span>
+        </span>
       </div>
     </div>
   );
