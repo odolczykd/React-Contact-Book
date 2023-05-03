@@ -45,7 +45,7 @@
   background-color: #02a1dd;
 }
 
-.searchInput {
+.input {
   font-size: 16px;
   margin: 0.5rem 0;
   padding: 0.5rem;
@@ -62,14 +62,14 @@
   transition: 300ms;
 }
 
-.searchInput:hover,
-.searchInput:focus {
+.input:hover,
+.input:focus {
   /* Glass Pane Effect */
   background: rgba(255, 255, 255, 0.3);
   border: 2px solid rgba(255, 255, 255, 0.6);
 }
 
-.searchInput::-webkit-input-placeholder {
+.input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.4);
 }
 

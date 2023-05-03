@@ -6,7 +6,7 @@ import {
   faLocationDot,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 function ContactDetails({ person }) {
   return (
@@ -49,6 +49,7 @@ function ContactDetails({ person }) {
               <h3 className="getInContactHeader">
                 Get In Contact with {person.firstName} {person.lastName}
               </h3>
+
               <div className="personContactTiles">
                 <div className="personContactTile">
                   <FontAwesomeIcon
@@ -57,6 +58,7 @@ function ContactDetails({ person }) {
                   />
                   <span>{person.contact.email}</span>
                 </div>
+
                 <div className="personContactTile">
                   <FontAwesomeIcon
                     icon={faPhone}
@@ -64,15 +66,28 @@ function ContactDetails({ person }) {
                   />
                   <span>{person.contact.phone}</span>
                 </div>
+
                 <div className="personContactTile">
                   <FontAwesomeIcon
                     icon={faFacebookF}
                     className="personContactIcon"
                   />
-                  <span>{person.contact.facebook}</span>
+                  <a
+                    className="hyperlink"
+                    href={person.contact.facebook}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {person.contact.facebook}
+                  </a>
                 </div>
+
                 <div className="personContactTile">
-                  {person.contact.facebook}
+                  <FontAwesomeIcon
+                    icon={faDiscord}
+                    className="personContactIcon"
+                  />
+                  <span>{person.contact.discord}</span>
                 </div>
               </div>
             </div>

@@ -6,6 +6,9 @@ html {
 
 body {
   position: relative;
+  background-image: url("/public/img/mountain.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .container {

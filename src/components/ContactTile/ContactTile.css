@@ -52,7 +52,7 @@
 .avatarImageSmall {
   height: 3.5rem;
   aspect-ratio: 1 / 1;
-  border-radius: 2rem;
+  border-radius: 100%;
   border: 2px solid rgba(255, 255, 255, 0.4);
 }
 

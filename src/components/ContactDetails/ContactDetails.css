@@ -16,7 +16,7 @@
 .avatarImageLarge {
   width: 8rem;
   aspect-ratio: 1 / 1;
-  border-radius: 4rem;
+  border-radius: 100%;
   border: 3px solid #02a1dd;
 }
 
@@ -79,6 +79,21 @@
   align-items: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
+}
+
+.personContactTile .hyperlink {
+  color: white;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+.personContactTile .hyperlink:hover {
+  color: #01b5ea;
+  text-decoration: underline;
+}
+
+.personContactTile .hyperlink:visited {
+  color: white;
 }
 
 .personContactIcon {
