@@ -4,7 +4,7 @@ import { calculateTimeWithOffset } from "../../utils/calculateTimeWithOffset";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 
-function ContactTile({ user, isSelected }) {
+function ContactTile({ user, selected }) {
   const [localTime, setLocalTime] = useState(
     calculateTimeWithOffset(user.offset)
   );
@@ -14,7 +14,7 @@ function ContactTile({ user, isSelected }) {
   }, 1000);
 
   return (
-    <div className={isSelected ? "contactTile selected" : "contactTile"}>
+    <section className={selected ? "contactTile selected" : "contactTile"}>
       <img className="avatarImageSmall" alt="avatar" src={user.avatar} />
       <div className="tileInfo">
         <h3 className="tileUserName">
@@ -25,7 +25,7 @@ function ContactTile({ user, isSelected }) {
           <span>{localTime}</span>
         </span>
       </div>
-    </div>
+    </section>
   );
 }
 

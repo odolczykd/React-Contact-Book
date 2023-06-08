@@ -1,0 +1,113 @@
+.creatorContainer {
+  width: 100%;
+  /*height: 100%;*/
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  /*gap: 0.5rem;*/
+}
+
+.creatorAvatar {
+  position: relative;
+  width: 6rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+  border: 4px solid #02a1dd;
+  background: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.creatorAvatar:hover {
+  color: #01b5ea;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.creatorAvatar .icon {
+  font-size: 4rem;
+}
+
+.avatarDisplay {
+  position: relative;
+  width: 6rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  transition: 300ms;
+}
+
+.formRow {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.formColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.width80 {
+  width: 80%;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+}
+
+.inputLarge {
+  height: 3rem;
+  resize: none;
+  font-family: sans-serif;
+}
+
+.avatarChangeOverlay {
+  position: absolute;
+  display: flex;
+  font-size: 2.5rem;
+  opacity: 0;
+  transition: 300ms;
+}
+
+.creatorAvatar:hover .avatarDisplay {
+  opacity: 0.5;
+}
+
+.creatorAvatar:hover .avatarChangeOverlay {
+  color: white;
+  opacity: 1;
+}
+
+.formButton {
+  width: 100%;
+  font-size: 14px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 2px solid #0286b6;
+  border-radius: 5px;
+  background-color: #01b5ea;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: 300ms;
+}
+
+.formButton:hover {
+  background-color: #0286b6;
+  border: 2px solid #01b5ea;
+}

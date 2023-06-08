@@ -15,17 +15,25 @@ function App() {
     fetch(USER_API_URL)
       .then((response) => response.json())
       .then(({ results }) => {
-        setContacts(
-          results.map((user) => {
-            return contactBuilder(user);
-          })
-        );
+        setContacts(results.map((user) => contactBuilder(user)));
       })
-      .catch((err) => console.warn(err));
+      .catch((err) => {
+        console.warn(err);
+      });
   }, []);
 
   const getSelectedMode = (mode) => {
     setSelectedMode(mode);
+  };
+
+  const getNewContact = (contact) => {
+    setContacts((prevState) => [...prevState, contact]);
+  };
+
+  const deleteUser = (uuid) => {
+    setContacts((prevState) =>
+      prevState.filter((value) => value.uuid !== uuid)
+    );
   };
 
   return (
@@ -35,9 +43,10 @@ function App() {
         mode={selectedMode}
         person={
           selectedMode !== "customize" &&
-          selectedMode !== "author" &&
           contacts.find((value) => value.uuid === selectedMode)
         }
+        sendNewUser={getNewContact}
+        removeUser={deleteUser}
       />
     </div>
   );

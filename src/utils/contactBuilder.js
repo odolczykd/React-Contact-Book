@@ -6,13 +6,10 @@ function contactBuilder(user) {
     uuid: user.login.uuid,
     firstName: user.name.first,
     lastName: user.name.last,
+    description: "",
     location: {
       line1: `${user.location.street.number} ${user.location.street.name}`,
       line2: `${user.location.city}, ${user.location.state}, ${user.location.country}`,
-      coordinates: {
-        latitude: user.location.coordinates.latitude,
-        longitude: user.location.coordinates.longitude,
-      },
     },
     contact: {
       email: user.email,

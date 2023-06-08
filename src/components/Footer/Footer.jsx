@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="footer">
       <span>
-        &copy; {currentYear} / Made by{" "}
+        &copy; {currentYear} • Made by{" "}
         <a
           className="footerLink"
           href="https://github.com/odolczykd"
