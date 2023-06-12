@@ -5,11 +5,8 @@ import {
   faLocationDot,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faDiscord,
-  faFacebook,
-  faFacebookF,
-} from "@fortawesome/free-brands-svg-icons";
+import { faDiscord, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import emptyAvatar from "../../img/user.png";
 
 function ContactDisplay({ person }) {
   return (
@@ -21,7 +18,11 @@ function ContactDisplay({ person }) {
       </HelmetProvider>
 
       <main className="personDetails">
-        <img className="avatarImageLarge" alt="avatar" src={person.avatar} />
+        <img
+          className="avatarImageLarge"
+          alt="avatar"
+          src={person.avatar || emptyAvatar}
+        />
 
         <h2 className="personDetailsUserName">
           {person.firstName} {person.lastName}
@@ -74,8 +75,14 @@ function ContactDisplay({ person }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span>/</span>
-                  <span>{person.contact.facebook.split("/").at(3)}</span>
+                  {person.contact.facebook ? (
+                    <>
+                      <span>/</span>
+                      <span>{person.contact.facebook.split("/").at(3)}</span>
+                    </>
+                  ) : (
+                    <i>not given</i>
+                  )}
                 </a>
               </div>
             </div>
@@ -91,7 +98,7 @@ function ContactDisplay({ person }) {
                   icon={faDiscord}
                   className="personContactIcon"
                 />
-                <span>{person.contact.discord}</span>
+                <span>{person.contact.discord || <i>not given</i>}</span>
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@ import "./ContactDetails.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faUserXmark } from "@fortawesome/free-solid-svg-icons";
-import { ContactDisplay } from "../ContactCreatorForm/ContactDisplay/ContactDisplay";
+import { ContactDisplay } from "../ContactDisplay/ContactDisplay";
 import { useState } from "react";
 import { ContactCreatorForm } from "../ContactCreatorForm/ContactCreatorForm";
 
