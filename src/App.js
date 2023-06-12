@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { LeftContainer } from "./components/LeftContainer/LeftContainer";
 import { RightContainer } from "./components/RightContainer/RightContainer";
 import { contactBuilder } from "./utils/contactBuilder";
+import { LeftContainerMobile } from "./components/LeftContainer/LeftContainerMobile";
 
 const USER_API_URL = "https://randomuser.me/api/?results=10&nat=us";
 
@@ -26,8 +27,11 @@ function App() {
     setSelectedMode(mode);
   };
 
-  const getNewContact = (contact) => {
+  const getContact = (contact) => {
+    const uuid = contact.uuid;
+    setContacts((prevState) => prevState.filter((user) => user.uuid !== uuid));
     setContacts((prevState) => [...prevState, contact]);
+    setSelectedMode(() => uuid);
   };
 
   const deleteUser = (uuid) => {
@@ -39,13 +43,17 @@ function App() {
   return (
     <div className="container">
       <LeftContainer contacts={contacts} selectedMode={getSelectedMode} />
+
+      {/* Mobile View Only */}
+      <LeftContainerMobile contacts={contacts} selectedMode={getSelectedMode} />
+
       <RightContainer
         mode={selectedMode}
         person={
           selectedMode !== "customize" &&
           contacts.find((value) => value.uuid === selectedMode)
         }
-        sendNewUser={getNewContact}
+        sendUser={getContact}
         removeUser={deleteUser}
       />
     </div>

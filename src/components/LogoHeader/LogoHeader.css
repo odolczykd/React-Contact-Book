@@ -5,6 +5,7 @@
   text-shadow: 2px 2px 0 #0286b6;
   transition: 300ms;
   cursor: pointer;
+  margin-bottom: 1rem;
 }
 
 .logoText:hover {

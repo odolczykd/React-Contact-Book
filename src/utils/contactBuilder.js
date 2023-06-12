@@ -9,7 +9,8 @@ function contactBuilder(user) {
     description: "",
     location: {
       line1: `${user.location.street.number} ${user.location.street.name}`,
-      line2: `${user.location.city}, ${user.location.state}, ${user.location.country}`,
+      // line2: `${user.location.city}, ${user.location.state}, ${user.location.country}`,
+      line2: `${user.location.city}, ${user.location.state}`,
     },
     contact: {
       email: user.email,

@@ -111,3 +111,38 @@
   background-color: #0286b6;
   border: 2px solid #01b5ea;
 }
+
+@media (max-width: 1000px) {
+  .creatorAvatar,
+  .avatarDisplay {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .formRow {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: unset;
+    margin-bottom: 0.5rem;
+  }
+
+  .width80 {
+    width: 100%;
+  }
+
+  .input {
+    width: unset;
+    height: unset;
+    padding: 0.2rem;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .desc {
+    width: 100%;
+  }
+
+  .formButton {
+    margin: 0;
+  }
+}

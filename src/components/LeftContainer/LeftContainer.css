@@ -1,4 +1,5 @@
 .leftContainer {
+  position: relative;
   width: 300px;
   padding: 1rem;
   display: flex;
@@ -6,6 +7,7 @@
   justify-content: space-between;
   gap: 0.5em;
   color: white;
+  z-index: 100;
 
   /* Glass Pane Effect */
   background: rgba(0, 0, 0, 0.2);
@@ -13,6 +15,35 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-right: 3px solid rgba(0, 0, 0, 0.3);
+}
+
+.leftContainerToggle {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  left: calc(100% + 2px);
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: 300ms;
+
+  /* Glass Pane Effect */
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  border-left: none;
+}
+
+.leftContainerToggle:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(0, 0, 0, 0.4);
+  border-left: none;
+}
+
+.barIcon {
+  font-size: 20px;
 }
 
 .contactTilesContainer {
@@ -122,5 +153,15 @@
 @media (max-width: 1300px) {
   .contactList {
     width: 700px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .leftContainer {
+    display: none;
+  }
+
+  .leftContainerToggle {
+    display: inline-block;
   }
 }

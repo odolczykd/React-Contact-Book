@@ -2,9 +2,9 @@ import "./RightContainer.css";
 import { ContactDetails } from "../ContactDetails/ContactDetails";
 import { ContactCreatorForm } from "../ContactCreatorForm/ContactCreatorForm";
 
-function RightContainer({ mode, person, sendNewUser, removeUser }) {
-  const getNewUser = (user) => {
-    sendNewUser(user);
+function RightContainer({ mode, person, sendUser, removeUser }) {
+  const getUser = (user) => {
+    sendUser(user);
   };
 
   const deleteUser = (user) => {
@@ -14,9 +14,13 @@ function RightContainer({ mode, person, sendNewUser, removeUser }) {
   return (
     <main className="rightContainer">
       {mode === "creator" ? (
-        <ContactCreatorForm sendNewUser={getNewUser} />
+        <ContactCreatorForm sendUser={getUser} switchEditorMode={() => {}} />
       ) : (
-        <ContactDetails person={person} removeUser={deleteUser} />
+        <ContactDetails
+          person={person}
+          removeUser={deleteUser}
+          sendUser={getUser}
+        />
       )}
     </main>
   );

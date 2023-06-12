@@ -5,11 +5,12 @@ import { ContactTile } from "../ContactTile/ContactTile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LogoHeader } from "../LogoHeader/LogoHeader";
 import { Footer } from "../Footer/Footer";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function LeftContainer({ contacts, selectedMode }) {
   const [selectedUser, setSelectedUser] = useState("");
   const [query, setQuery] = useState("");
+  const [isToggleVisible, setIsToggleVisible] = useState(false);
 
   // Contact Filtering
   const filteredContacts = useMemo(() => {
@@ -53,15 +54,6 @@ function LeftContainer({ contacts, selectedMode }) {
     <section className="leftContainer">
       <LogoHeader />
 
-      <input
-        className="input"
-        type="search"
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder="Search your contacts..."
-      />
-
-      <h3 className="yourContactsHeader">Your Contacts</h3>
-
       <div
         className="glassPaneButton"
         onClick={() => {
@@ -72,6 +64,15 @@ function LeftContainer({ contacts, selectedMode }) {
         <FontAwesomeIcon icon={faPlus} />
         <h4 className="">Add New Contact</h4>
       </div>
+
+      <h3 className="yourContactsHeader">Your Contacts</h3>
+
+      <input
+        className="input"
+        type="search"
+        onChange={(event) => setQuery(event.target.value)}
+        placeholder="Search your contacts..."
+      />
 
       {renderContactList()}
 

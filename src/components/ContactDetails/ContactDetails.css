@@ -48,7 +48,7 @@
 .personDetailsAddress .description {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   font-weight: bold;
 }
 
@@ -135,4 +135,73 @@
   /* Glass Pane Effect */
   background: rgba(255, 255, 255, 0.3);
   border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.info {
+  font-size: 1.2rem;
+}
+
+.buttonContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .personDetails {
+    width: unset;
+  }
+
+  .avatarImageLarge {
+    width: 6rem;
+  }
+
+  .personDetailsUserName {
+    font-size: 1.5rem;
+  }
+
+  .personDetailsDescription {
+    width: unset;
+    padding: 0 0.5rem;
+  }
+
+  .personDetailsAddress {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .personDetailsAddress .description {
+    font-size: 0.9rem;
+    align-items: center;
+  }
+
+  .personDetailsIcon {
+    height: 1rem;
+  }
+
+  .getInContactHeader {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .personContactTiles {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .personContactIcon {
+    height: 0.8rem;
+  }
+
+  .personContactTile a,
+  .personContactTile span {
+    font-size: 0.8rem;
+  }
+
+  .buttonContainer {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
 }
