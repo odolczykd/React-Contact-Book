@@ -122,9 +122,11 @@ function ContactCreatorForm({ userToEdit, sendUser, switchEditorMode }) {
 
   const handleFacebookInputChange = (e) => {
     const input = e.target;
-    const regex = /^(https?:\/\/)?(www.)?facebook.[a-z]{2,3}\/[A-Za-z0-9]+$/;
+    const regex = /^https?:\/\/(www.)?facebook.[a-z]{2,3}\/[A-Za-z0-9]+$/;
     if (input.value.match(regex) === null) {
-      input.setCustomValidity("Invalid Facebook Profile Link");
+      input.setCustomValidity(
+        "Invalid Facebook Profile Link\nExample: https://facebook.com/username"
+      );
     } else {
       setFacebook(input.value);
       input.setCustomValidity("");
