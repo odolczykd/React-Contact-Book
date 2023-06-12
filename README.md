@@ -2,7 +2,7 @@
 
 Projekt zaliczeniowy z przedmiotu *Tworzenie nowoczesnych aplikacji frontendowych w praktyce*.
 
-### Aplikacja jest dostępna [pod tym linkiem]().
+### Aplikacja jest dostępna [pod tym linkiem](https://odolczykd.github.io/React-Contact-Book).
 
 ## O aplikacji
 
